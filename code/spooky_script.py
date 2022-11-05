@@ -11,14 +11,14 @@ pir = MotionSensor(4)
 led = LED(17)
 
 def rndmp3():
-    randomfile = random.choice(os.listdir("/home/pi/halloween/sounds/"))
-    file = '/home/pi/halloween/sounds/' + randomfile
+    randomfile = random.choice(os.listdir("/home/pi/spooky_pumpkin/sounds/"))
+    file = '/home/pi/spooky_pumpkin/sounds/' + randomfile
     call(["aplay", file])
 
 while True:
     if b.get_connected_devices() == []:
-        print("no device connected, scanning for 10sec")
-        b.scan(10)
+        print("no device connected, scanning for 5 sec")
+        b.scan(5)
         b.connect("C9:50:76:E4:38:AC")      #MAC address of my bluetooth speaker;paired and trusted beforehand via terminal & "bluetoothctl"
         print("connected")
     
